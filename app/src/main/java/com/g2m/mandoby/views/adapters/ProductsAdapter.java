@@ -99,7 +99,7 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHo
         }
         /////////////
 //////////////////////////////////
-
+///////////////////////////////
         public AmountHandeler(AlertDialog ctx){
             alertDialog=ctx;
         }
