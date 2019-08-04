@@ -98,7 +98,7 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHo
             notifyPropertyChanged(BR.amount);
         }
         /////////////
-
+//////////////////////////////////
 
         public AmountHandeler(AlertDialog ctx){
             alertDialog=ctx;
