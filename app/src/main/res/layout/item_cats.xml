@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<data>
+    <variable
+        name="catorcompany"
+        type="com.g2m.mandoby.models.datamodel.CatsAndComModel" />
+
+    <variable
+        name="MainFragmentListener"
+        type="com.g2m.mandoby.views.interf.MainFragmentListener" />
+</data>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="5dp"
+        app:cardUseCompatPadding="false"
+        android:background="#000"
+        android:layout_margin="5dp"
+
+        android:onClick="@{()->MainFragmentListener.onClick()}"
+        >
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="90"
+            >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@drawable/offers"
+                android:background="@drawable/back_gr"
+                app:imageUrl="@{catorcompany.image}"
+                android:scaleType="fitXY"/>
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textStyle="bold"
+    android:text="@{catorcompany.title}"
+    android:textColor="#000"
+    android:gravity="center"
+    android:textSize="@dimen/splash_app_describe_size"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</layout>

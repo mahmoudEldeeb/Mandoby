@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="amountHandeler"
+            type="com.g2m.mandoby.views.adapters.ProductsAdapter.AmountHandeler" />
+    </data>
+    <androidx.cardview.widget.CardView android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="5dp"
+    app:cardUseCompatPadding="false"
+    android:background="#000"
+    android:layout_margin="5dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_gravity="center">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textSize="20dp"
+    android:text="قم بادخال الكمية المطلوبة "/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        >
+
+        <ImageButton
+            android:id="@+id/plus"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:background="@drawable/ic_add_circle_black_24dp"
+
+            android:onClick="@{()->amountHandeler.plus()}"/>
+
+        <EditText
+            android:id="@+id/amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/shapeemail"
+            android:hint="0"
+            android:textSize="20dp"
+            android:inputType="number"
+            android:text="@{amountHandeler.amount}" />
+
+        <ImageButton
+            android:id="@+id/mins"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:background="@drawable/ic_remove_circle_black_24dp"
+
+            android:onClick="@{()->amountHandeler.mins()}"/>
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="تم"
+                android:id="@+id/ok"
+
+                android:onClick="@{()->amountHandeler.ok()}"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="الغاء"
+
+                android:onClick="@{()->amountHandeler.cancel()}"
+                android:id="@+id/cancel"/>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+</layout>

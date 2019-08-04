@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <variable
+            name="MainFragmentListener"
+            type="com.g2m.mandoby.views.interf.MainFragmentListener" />
+    </data>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        app:cardElevation="5dp"
+        app:cardUseCompatPadding="false"
+        android:background="#000"
+        android:layout_margin="5dp"
+        android:layoutDirection="rtl"
+        >
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="90"
+            >
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_weight="30"
+                android:layout_height="wrap_content"
+                android:background="@drawable/product"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="1dp"
+                />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="60"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center_vertical"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="حلة سودة بس مش سودة قوى "
+                    android:textSize="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="10dp"
+                    android:text="السعر : 1000 جنيه ومش عايز فصال"
+                    />
+                <LinearLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_horizontal"
+                    android:visibility="gone">
+
+                    <ImageButton
+                        android:id="@+id/plus"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/ic_add_circle_black_24dp" />
+
+                    <EditText
+                        android:id="@+id/amount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/shapeemail"
+                        android:hint="0"
+                        android:inputType="number"
+                        android:text="0" />
+
+                    <ImageButton
+                        android:id="@+id/mins"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/ic_remove_circle_black_24dp" />
+                </LinearLayout>
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_add_shopping_cart_black_24dp"
+                        android:background="@null"
+                        android:layout_gravity="left"
+                        android:layout_marginLeft="10dp"
+
+                        android:onClick="@{()->MainFragmentListener.onClick()}"
+                        />
+                </FrameLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</layout>

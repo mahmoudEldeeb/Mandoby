@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <data>
+        <variable
+            name="type"
+            type="String"
+            />
+        <variable
+            name="MainFragmentListener"
+            type="com.g2m.mandoby.views.interf.MainFragmentListener" />
+    </data>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.fragments.MainFragment"
+    android:weightSum="100"
+    android:orientation="vertical"
+    android:background="#ffff">
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="25"
+    app:cardElevation="15dp"
+    app:cardUseCompatPadding="false"
+    android:background="#000"
+
+    >
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/offers"
+        android:scaleType="fitXY"/>
+</androidx.cardview.widget.CardView>
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@{type}"
+    android:onClick="@{()->MainFragmentListener.onClick()}"
+    android:layout_gravity="end"
+
+    />
+
+
+  <androidx.recyclerview.widget.RecyclerView
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_weight="75"
+      android:id="@+id/res_category"
+      >
+
+  </androidx.recyclerview.widget.RecyclerView>
+
+
+
+</LinearLayout>
+</layout>
